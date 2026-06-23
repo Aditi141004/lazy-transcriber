@@ -1,102 +1,68 @@
 # LazyTranscriber 🎙️
 
-A native Android application built in Java that converts spoken input into reusable text for situations where typing is inconvenient but voice notes are not appropriate.
+> A native Android application that converts speech into clipboard-ready text — built for situations where typing is slow but voice messages aren't appropriate.
 
-The application supports both English and Hinglish transcription, automatically copies recognized text to the clipboard, and provides a clean Material Design interface with dark mode support.
-
----
-
-## Why I Built This
-
-There are many situations where speaking is faster than typing, but sending a voice message is not always practical.
-
-I built LazyTranscriber as a lightweight Android utility that allows users to dictate text and instantly reuse it anywhere through the clipboard.
-
-The project started as a personal productivity tool and evolved into an exploration of Android speech recognition, UI design, runtime permissions, device compatibility, and dark mode implementation.
+[![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://developer.android.com)
+[![Language](https://img.shields.io/badge/Language-Java-orange.svg)](https://www.java.com)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
-## Features
+## Overview
 
-* English speech-to-text transcription
-* Hinglish transcription support
-* Automatic clipboard copy after transcription
-* Manual copy and clear actions
-* Material Design user interface
-* Dark mode support
-* Runtime microphone permission handling
-* Real-device tested implementation
-* Custom launcher icon (Lazy Panda)
+LazyTranscriber is a lightweight Android productivity utility I designed and built end-to-end in Java. It supports both **English and Hinglish** speech recognition and automatically copies transcribed text to the clipboard — eliminating the friction of dictating and then manually copying text.
+
+What started as a personal tool evolved into a full exploration of Android architecture, speech APIs, runtime permissions, and adaptive theming.
+
+---
+
+## Demo
+
+### Light Mode &nbsp;&nbsp;|&nbsp;&nbsp; Dark Mode &nbsp;&nbsp;|&nbsp;&nbsp; Transcription in Action
+
+| ![Light Mode](screenshots/home-light.jpg) | ![Dark Mode](screenshots/home-dark.jpg) | ![Transcription](screenshots/transcription.jpg) |
+|:---:|:---:|:---:|
+| Light Mode | Dark Mode | Live Transcription |
+
+---
+
+## Key Features
+
+| Feature | Details |
+|---|---|
+| 🗣️ Speech-to-Text | Real-time English & Hinglish transcription |
+| 📋 Auto-copy | Recognized text is instantly sent to clipboard |
+| 🌙 Dark Mode | Full system-driven dark/light theme support |
+| 🔒 Permission Handling | Runtime microphone permission with graceful fallback |
+| 🎨 Material Design | Clean, accessible UI using Material Components |
+| 📱 Real-Device Tested | Validated on physical hardware, not just emulator |
 
 ---
 
 ## Tech Stack
 
-* Java
-* Android SDK
-* Android SpeechRecognizer API
-* Material Components
-* ConstraintLayout
-* Gradle
+- **Language:** Java
+- **Platform:** Android SDK
+- **Speech API:** Android `SpeechRecognizer`
+- **UI:** Material Components, ConstraintLayout
+- **Build:** Gradle
 
 ---
 
-## Screenshots
-
-### Light Mode
-
-![Light Mode](screenshots/home-light.jpg)
-
-### Dark Mode
-
-![Dark Mode](screenshots/home-dark.jpg)
-
-### Example Transcription
-
-![Transcription](screenshots/transcription.jpg)
-
----
-
-## Technical Challenges Solved
+## Technical Highlights
 
 ### SpeechRecognizer Lifecycle Management
+Repeated recognition sessions on Android are notoriously fragile — certain devices silently fail to restart recognition after stopping. I diagnosed this by testing across multiple real-device sessions and resolved it by implementing explicit lifecycle teardown and conditional session recreation, ensuring consistent behavior across device variants.
 
-A key challenge was handling repeated speech recognition sessions reliably. Certain devices do not restart recognition sessions correctly after stopping.
+### System-Driven Dark Mode
+Proper dark mode support isn't just a color swap. I structured resource qualifiers (`res/values-night/`) to separate light and dark theming at the resource level, ensuring the app responds correctly to system theme changes without any manual overrides or activity restarts.
 
-This was resolved by carefully managing the SpeechRecognizer lifecycle and recreating recognition sessions when necessary.
+### Hinglish Transcription
+Android's `SpeechRecognizer` doesn't natively advertise Hinglish as a locale. I experimented with locale configurations and recognition parameters to achieve usable Hinglish transcription — a language pattern common in Indian urban usage that mixes Hindi and English.
 
-### Dark Mode Implementation
-
-Implementing system-driven dark mode required understanding Android themes, resource qualifiers, and proper separation of light and dark resources.
-
-### Real Device Testing
-
-The Android emulator introduced performance and stability issues during development. The application was ultimately tested and refined using a physical Android device.
+### Real-Device Debugging
+The Android Emulator introduced speech recognition instability that masked real bugs. Shifting to physical device testing uncovered and resolved timing and permission-handling issues that would have gone undetected otherwise.
 
 ---
 
-## What I Learned
-
-* Android application architecture fundamentals
-* Runtime permissions
-* Speech recognition APIs
-* Material Design principles
-* Resource management and theming
-* Debugging on real Android devices
-* UI/UX iteration and refinement
-
----
-
-## Future Improvements
-
-* Offline transcription models
-* Export/share functionality
-* History of previous transcriptions
-* Multiple language support
-* Home-screen widget integration
-
----
-
-## License
-
-MIT License
+## Architecture & Code Structure
