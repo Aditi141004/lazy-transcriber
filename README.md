@@ -45,19 +45,15 @@ The project started as a personal productivity tool and evolved into an explorat
 
 ### Light Mode
 
-![Light Mode](screenshots/home-light.png)
+![Light Mode](screenshots/home-light)
 
 ### Dark Mode
 
-![Dark Mode](screenshots/home-dark.png)
-
-### Listening State
-
-![Listening](screenshots/listening.png)
+![Dark Mode](screenshots/home-dark)
 
 ### Example Transcription
 
-![Transcription](screenshots/transcription.png)
+![Transcription](screenshots/transcription)
 
 ---
 
