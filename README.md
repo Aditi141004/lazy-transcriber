@@ -45,15 +45,15 @@ The project started as a personal productivity tool and evolved into an explorat
 
 ### Light Mode
 
-![Light Mode](screenshots/home-light)
+![Light Mode](screenshots/home-light.jpg)
 
 ### Dark Mode
 
-![Dark Mode](screenshots/home-dark)
+![Dark Mode](screenshots/home-dark.jpg)
 
 ### Example Transcription
 
-![Transcription](screenshots/transcription)
+![Transcription](screenshots/transcription.jpg)
 
 ---
 
