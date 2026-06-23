@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">LazyTranscriber</string>
+
+    <!-- Main UI -->
+    <string name="tap_to_speak">Tap to Speak</string>
+    <string name="start_voice_input">Start voice input</string>
+
+    <!-- Status messages -->
+    <string name="idle_status">Ready to listen</string>
+    <string name="listening">Listening…</string>
+    <string name="processing">Processing…</string>
+    <string name="speech_error">Speech recognition failed</string>
+
+    <!-- Output -->
+    <string name="speech_placeholder">Your speech will appear here</string>
+
+    <!-- Actions -->
+    <string name="copy">Copy</string>
+    <string name="clear">Clear</string>
+    <string name="copied_clipboard">Copied to clipboard</string>
+
+    <string name="speech_not_available">Speech recognition not available on this device</string>
+    <string name="recognition_error">Recognition error: %1$d</string>
+
+    <string name="language_english">English</string>
+    <string name="language_hinglish">Hinglish</string>
+</resources>
